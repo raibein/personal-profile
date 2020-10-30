@@ -18,6 +18,9 @@ pipeline{
         stage("Build Dockerfile"){
             steps{
                 echo 'Building docker image'
+                sh "docker image build -t ${jobname}"
+                sh "docker image tag ${jobname} rabenshrestha/${jobname}"
+                sh "docker image tag ${jobname} rabenshrestha/${joblatest}"
             }
         }
 
