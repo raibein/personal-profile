@@ -1,8 +1,6 @@
 pipeline{
     
-    agent{
-        dockerfile true
-    }
+    agent any
 
     environment{
         jobname = '$JOB_NAME:v1.$BUILD_ID .'
