@@ -1,8 +1,6 @@
 pipeline{
     
-    agent {
-        docker { image 'nginx:alpine' }
-    }
+    agent none
 
     environment{
         jobname = '$JOB_NAME:v1.$BUILD_ID .'
