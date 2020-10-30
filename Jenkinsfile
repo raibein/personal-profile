@@ -2,8 +2,8 @@ pipeline{
     agent any
 
     environment{
-        jobname = $JOB_NAME:v1.$BUILD_ID
-        joblatest = $JOB_NAME:latest
+        jobname = '$JOB_NAME:v1.$BUILD_ID'
+        joblatest = '$JOB_NAME:latest'
     }
     
     stages{
