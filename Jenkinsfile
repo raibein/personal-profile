@@ -1,8 +1,10 @@
 pipeline{
-    agent any
+    agent{
+        dockerfile true
+    }
 
     environment{
-        jobname = '$JOB_NAME:v1.$BUILD_ID'
+        jobname = '$JOB_NAME:v1.$BUILD_ID .'
         joblatest = '$JOB_NAME:latest'
     }
     
