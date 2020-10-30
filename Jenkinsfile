@@ -7,16 +7,20 @@ pipeline{
     }
     
     stages{
+        
         stage("Pull code from GitHub"){
             steps{
                 git 'https://github.com/raibein/personal-profile.git'
             }
         }
-    }
 
-    stage("Build Dockerfile"){
-        sh "docker image build -t ${jobname} ."
-        sh "docker image tag ${jobname} rabenshrestha/${jobname}"
-        sh "docker image tag ${jobname} rabenshrestha/${joblatest}"
+        stage("Build Dockerfile"){
+            steps{
+                sh "docker image build -t ${jobname} ."
+                sh "docker image tag ${jobname} rabenshrestha/${jobname}"
+                sh "docker image tag ${jobname} rabenshrestha/${joblatest}"
+            }
+        }
+
     }
 }
