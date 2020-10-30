@@ -1,8 +1,11 @@
 pipeline{
-    def jobname = '$JOB_NAME:v1.$BUILD_ID'
-    def joblatest = '$JOB_NAME:latest'
-
     agent any
+
+    environment{
+        jobname = $JOB_NAME:v1.$BUILD_ID
+        joblatest = $JOB_NAME:latest
+    }
+    
     stages{
         stage("Pull code from GitHub"){
             steps{
