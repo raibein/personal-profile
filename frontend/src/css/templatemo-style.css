@@ -423,7 +423,7 @@ h3.profile-title {
 .banner-bg {
   padding: 260px 80px;
   position: relative;
-  background: url("../img/slide.jpg");
+  background: url("slide.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
