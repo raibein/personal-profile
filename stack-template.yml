@@ -1,0 +1,27 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Creating stack for Personal Project
+
+# Parameters start from here
+Parameters:
+  GithubRepository:
+    Description: Github repository description
+    Type: String
+    Default: github.com/raibein/personal-profile
+
+# Stack Resources start from here
+Resources: 
+
+  # Stack for...
+  # Create EC2 Instance
+  # One for Jenkins Server
+  # One for Deployment
+  PrePersonalEC2Instance: 
+    Type: AWS::EC2::Instance
+    Properties: 
+      Parameters: 
+        InstanceType: "t2.micro"
+      Tags:
+        - Key: GithubRepository
+          Value: !Ref GithubRepository
+
+

@@ -1,0 +1,6 @@
+## React node_modules
+frontend/node_modules
+static-frontend
+default.conf
+static.Dockerfile
+static-docker-compose.yml
