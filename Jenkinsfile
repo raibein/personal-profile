@@ -25,11 +25,13 @@ pipeline{
         }
 
         stage("Push image to DockerHub"){
-            withCredentials([usernameColonPassword(credentialsId: 'dockerhubpswd', variable: 'dockerhubpswd')]) {
-                sh "docker login -u rabenshrestha -p ${dockerhubpswd}"
-                sh "docker image push rabenshrestha/${jobname}"
-                sh "docker image push rabenshrestha/${joblatest}"
-                sh "docker image rmi ${jobname} rabenshrestha/${jobname} abenshrestha/${joblatest}"
+            steps{
+                withCredentials([usernameColonPassword(credentialsId: 'dockerhubpswd', variable: 'dockerhubpswd')]) {
+                    sh "docker login -u rabenshrestha -p ${dockerhubpswd}"
+                    sh "docker image push rabenshrestha/${jobname}"
+                    sh "docker image push rabenshrestha/${joblatest}"
+                    sh "docker image rmi ${jobname} rabenshrestha/${jobname} abenshrestha/${joblatest}"
+                }
             }
         }
 
