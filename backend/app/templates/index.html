@@ -2,7 +2,15 @@
 
 
 {% block content %}
-    <h1> 
-        Welcome to My Home Page
-    </h1>
+    
+    {% for content in about %}
+        <p>
+            {{content.title}} 
+            <br/>
+            {{content.description}}
+            <br />
+            <hr />
+        </p>
+    {% endfor %}
+
 {% endblock content %}

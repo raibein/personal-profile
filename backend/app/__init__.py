@@ -11,7 +11,7 @@ def create_app(app_config='development'):
     # app.run(debug=True)
     app.config.from_object(config[app_config])
 
-    # db.init_app(app)
+    db.init_app(app)
     migrate = Migrate(app, db)
 
     # with app.app_context():
