@@ -1,0 +1,11 @@
+version: "3"
+services:
+    web:
+        build: .
+            # dockerfile: Dockerfile.backend
+        ports:
+            - 5000: 5000
+        # volumes:
+        #     - .:/backend
+        # command: "flask run"
+        # command: "docker run -p 5000:5000 -t -i compose-flask:latest"
