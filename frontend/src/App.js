@@ -8,7 +8,7 @@ import {
 
 import './App.css';
 
-import DefaultContainer from './Containers/DefaultContainer';
+import DefaultContainer from './Containers/FrontPage/DefaultContainer';
 
 function App() {
   return (
