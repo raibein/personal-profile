@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, json, jsonify
 
 from app.about_api.models import About
 from app.about_api.forms import AboutForm
@@ -23,9 +23,24 @@ def index():
             db.session.add(new_about)
             db.session.commit()
             return redirect(url_for('about.index'))
-        return render_template('about-new.html', form=form)
+        
+        return jsonify({
+            'id': new_about.id,
+            'title': new_about.title,
+            'description': new_about.description
+        })
+        # return render_template('about-new.html', form=form)
 
-    return render_template('index.html', about=About.query.all()) # fetch all data and display
+    return jsonify([
+        {
+            'id': about_object.id, 
+            'title': about_object.title, 
+            'description': about_object.description
+        }
+        for about_object in About.query.all()
+    ])
+
+    # return render_template('index.html', about=About.query.all()) # fetch all data and display
 
 
 @about.route("/about", methods=['GET'])

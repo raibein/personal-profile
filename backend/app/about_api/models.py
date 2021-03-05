@@ -10,3 +10,10 @@ class About(db.Model):
     def __init__(self, title, description):
         self.title = title
         self.description = description
+
+    def to_json(self):
+        return {
+            'id' : self.id,
+            'title': self.title,
+            'description': self.description
+        }
