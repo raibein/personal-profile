@@ -6,8 +6,8 @@ class User(db.Model):
 
     # columns
     id = db.Column(db.Integer, primary_key=True)
-    about_title = db.Column(db.Text)
-    about_content = db.Column(db.Text)
+    name = db.Column(db.Text)
+    password = db.Column(db.Text)
 
-    def __init__(self, about_title):
-        self.about_title = about_title
+    def __init__(self, name):
+        self.name = name
