@@ -43,7 +43,7 @@ def index():
     # return render_template('index.html', about=About.query.all()) # fetch all data and display
 
 
-@about.route("/about", methods=['GET'])
+@about.route("/about-us", methods=['GET'])
 def about_page():
     return ("This is about us page")
 

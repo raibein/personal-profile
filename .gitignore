@@ -6,3 +6,12 @@ static.Dockerfile
 static-docker-compose.yml
 
 ## Backend dir
+backend/env
+
+## pycache
+backend/app/__pycache__
+backend/app/about_api/__pycache__
+backend/app/auth_api/__pycache__
+backend/app/currency_conversion_api/__pycache__
+backend/app/migrations/__pycache__
+backend/app/migrations/versions/__pycache__
