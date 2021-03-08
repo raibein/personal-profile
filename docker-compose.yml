@@ -17,3 +17,19 @@ services:
             - 5000: 5000
         volumes:
             -.:/backend
+    postgres:
+        image: 'postgres:9.5'
+        env_file:
+            - '.env'
+        volumes:
+            - 'postgres:/var/lib/postgresql/data'
+        ports:
+            - '5432:5432'
+            
+    celery:
+        build: .
+        command: celery worker -B -l info -A backend.app.currency_conversion_api.routes
+        env_file:
+            - '.env'
+        volumes:
+            - '.:/app'

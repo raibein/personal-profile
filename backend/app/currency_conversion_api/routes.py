@@ -85,17 +85,6 @@ def execute_task():
     return "success celery task"
 
 
-
-
-
-
-
-
-
-
-
-
-
 @conversion_api.resource('/currencies')
 class CurrenciesAPI(Resource):
     def get(self):
