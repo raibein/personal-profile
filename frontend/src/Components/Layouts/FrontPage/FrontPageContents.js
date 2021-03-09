@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class DefaultContainer extends Component {
+class FrontPageComponent extends Component {
 
     render() {
         console.log(this.props.data.rate);
@@ -153,7 +153,7 @@ class DefaultContainer extends Component {
                     {
                         this.props.data.map((aboutData) => (
                             <ul>
-                                <li>{aboutData.rate['CAD']} </li>
+                                <li>Value from api : {aboutData.rate['CAD']} </li>
                             </ul>
                         ))
                     }
@@ -166,4 +166,4 @@ class DefaultContainer extends Component {
     }
 }
 
-export default DefaultContainer
+export default FrontPageComponent
