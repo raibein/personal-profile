@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 
 class DefaultContainer extends Component {
+
     render() {
+        console.log(this.props.data.rate);
         return (
             <div>        
                 <div class="page-section" id="about">
@@ -145,6 +147,16 @@ class DefaultContainer extends Component {
                         </fieldset>
                     </form>
                 </div>
+                </div>
+
+                <div>
+                    {
+                        this.props.data.map((aboutData) => (
+                            <ul>
+                                <li>{aboutData.rate['CAD']} </li>
+                            </ul>
+                        ))
+                    }
                 </div>
             
                 {/* Footer Start from Here */}

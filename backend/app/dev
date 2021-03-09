@@ -1,0 +1,4 @@
+Collecting pytz
+  Using cached https://files.pythonhosted.org/packages/70/94/784178ca5dd892a98f113cdd923372024dc04b8d40abe77ca76b5fb90ca6/pytz-2021.1-py2.py3-none-any.whl
+Installing collected packages: pytz
+Successfully installed pytz-2021.1

@@ -4,6 +4,8 @@ from app.config import config
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+from flask_cors import CORS
+
 import flask_monitoringdashboard as dashboard
 
 
@@ -12,6 +14,8 @@ db = SQLAlchemy()
 def create_app(app_config='development'):
     
     app = Flask(__name__)
+
+    CORS(app)    # For api access using CORS
 
     app.config.from_object(config[app_config])
 

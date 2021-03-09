@@ -93,7 +93,7 @@ class CurrenciesAPI(Resource):
         r = requests.get(url=url, json=body, headers=headers)
         json_data = json.loads(r.text)
         json_data = json_data['rates']
-        return ({"rate": json_data, "status": 200})
+        return ([{"rate": json_data, "status": 200}])
 
     
     def post(self):

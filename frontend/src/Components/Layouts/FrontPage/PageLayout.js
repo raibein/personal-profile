@@ -17,8 +17,32 @@ import SideNavigation from "./SideNavigation";
 import Footer from "./Footer";
 import FrontPageContents from "./FrontPageContents";
 
+
+import { getAboutContent } from '../../../api/about';
+
 class DefaultContainer extends Component {
+
+    state = {
+        aboutData: [],
+		isLoadinglist: false
+      }
+
+
+    fetchData = () => {
+		this.setState({ isLoadinglist: true });
+
+		getAboutContent()
+			.then(aboutData => this.setState({ aboutData }))
+			.catch(error => { "Data not found "})
+			.then(() => this.setState({ isLoadinglist: false }));
+	};
+    
+    componentDidMount = () => {
+		this.fetchData();
+	};
+    
     render() {
+        // console.log(this.state.aboutData);
         return (
             <div>
                 
@@ -27,7 +51,7 @@ class DefaultContainer extends Component {
                 <div class="main-content">
                     <div class="fluid-container">
                         <div class="content-wrapper">
-                            <FrontPageContents />
+                            <FrontPageContents data = { this.state.aboutData }  />
                             <Footer />
                         </div>
                     </div>
