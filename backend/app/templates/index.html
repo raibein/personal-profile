@@ -4,13 +4,27 @@
 {% block content %}
     
     {% for content in about %}
-        <p>
-            {{content.title}} 
-            <br/>
-            {{content.description}}
-            <br />
-            <hr />
-        </p>
+        <table border="1" style="width:70%">
+            <tr>
+                <td width='200'> <b> Title </b> </td>
+                <td  width='400'> <b> Description </b></td>
+                <td  width='200'> <b> Action </b></td>
+            </tr>
+            <tr>
+                <td> {{content.title}}  </td>
+                <td> {{content.description}}  </td>
+                <td> 
+                    <!-- <a href="{{content.id}}/edit"> Edit </a> |  -->
+                    <form method="GET" action="{{url_for('about.edit', id=content.id)}}">
+                        <input type="submit" value="Edit">
+                    </form>
+
+                    <form method="POST" action="{{url_for('about.delete', id=content.id)}}">
+                        <input type="submit" value="X">
+                    </form>
+                </td>
+            </tr>
+        </table>
     {% endfor %}
 
 {% endblock content %}
